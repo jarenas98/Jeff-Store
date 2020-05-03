@@ -1,0 +1,7 @@
+
+<div class="product-grid" >
+    <!--Componente -->
+    <app-product *ngFor="let product of products" 
+    (addCarEvent)="addCarEscuchador($event)"
+    [product]="product"></app-product>
+</div>

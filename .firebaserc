@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "jeff-store-52e29": {
+      "hosting": {
+        "Jeff-Store": [
+          "jeff-store-52e29"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jeff-store-52e29"
+  }
+}

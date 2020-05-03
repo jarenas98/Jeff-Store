@@ -1,0 +1,40 @@
+<mat-horizontal-stepper #stepper>
+  <mat-step>
+    <ng-template matStepLabel>Tus Productos</ng-template>
+      <!-- (products$ | async) -> significa que iniciara
+        despues de la subscripcion, as products crea una variable -->
+    <div *ngIf="(products$ | async) as products" >
+      <h1 *ngIf="products.length === 0">No hay productos agregados</h1>
+      <ul>
+
+        <li *ngFor="let product of products" >
+          <div class="col-xs-12 col-sm-2 col-md-2">
+            <div class="box">
+              <img [src]="product.image" alt="image of product" class="image">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-5 col-md-5">
+            <div class="box">
+              {{ product.title }}
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-5 col-md-5">
+            <div class="box">
+              {{ product.price }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Tus Datos</ng-template>
+    <h1>Contenido</h1>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Pago</ng-template>
+    <h1>Contenido</h1>
+  </mat-step>
+</mat-horizontal-stepper>
+
+

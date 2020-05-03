@@ -1,0 +1,48 @@
+<form  [formGroup]="form" class="form-users" (ngSubmit)="register($event)">
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Usuarios</mat-card-title>
+            <mat-card-subtitle>Registro</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <!-- Email Input -->
+            <div class="row">
+              <div class="col-xs">
+                <mat-form-field>
+                <mat-label>Correo</mat-label>
+                  <input matInput placeholder="Ex. pat@example.com" formControlName="email" type="email">
+                  <mat-error *ngIf="form.get('email').hasError('email')" >
+                    Por favor ingrese un correo valido
+                  </mat-error>
+                  <mat-error *ngIf="form.get('email').hasError('required')">
+                    El Correo es <strong>necesario</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <!-- Password Input -->
+            <div class="row">
+              <div class="col-xs">
+                <mat-form-field>
+                <mat-label>Contraseña</mat-label>
+                <input matInput placeholder="Ingrese su Contraseña" formControlName="password" type="text">
+                <mat-error *ngIf="form.get('password').hasError('required')" >
+                  La contraseña es <strong>necesaria</strong>
+                </mat-error>
+              </mat-form-field>
+              </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <button mat-button [disabled]="form.invalid" type="submit">Registrar</button>
+
+        </mat-card-actions>
+        <mat-card-footer>
+
+        </mat-card-footer>
+    </mat-card>
+
+
+</form>
